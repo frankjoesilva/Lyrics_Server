@@ -11,13 +11,9 @@ const CLIENT_ID = process.env.CLIENT_ID
 const CLIENT_SECRET = process.env.CLIENT_SECRET
 const REDIRECT_URI = process.env.REDIRECT_URI
 
-const corsOptions = {
-  origin: 'http://localhost:3000',
-  credentials: true,
-  optionSuccessStatus: 200
-}
+
 const app = express();
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
