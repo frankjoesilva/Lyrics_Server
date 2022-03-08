@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 const lyricsFinder = require('lyrics-finder');
 const SpotifyWebApi = require('spotify-web-api-node');
 
+const port = process.env.PORT || 4000
+
 const CLIENT_ID = process.env.CLIENT_ID
 const CLIENT_SECRET = process.env.CLIENT_SECRET
 const REDIRECT_URI = process.env.REDIRECT_URI
@@ -62,5 +64,6 @@ app.get('/lyrics', async (req, res) => {
   res.json({ lyrics })
 })
 
-app.listen(3001)
+app.listen(port, () => console.log('server started on port', port))
+
 
